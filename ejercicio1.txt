@@ -1,0 +1,22 @@
+actividad33=# CREATE TABLE autor(id_autor SERIAL PRIMARY KEY, name VARCHAR(50));
+CREATE TABLE
+actividad33=# CREATE TABLE articulo(id_articulo SERIAL PRIMARY KEY, id autor SERIAL REFERENCES auor)
+actividad33-# 
+actividad33-# CREATE TABLE articulo(id_articulo SERIAL PRIMARY KEY, id_autor SERIAL REFERENCES autor(id_autor));
+ERROR:  syntax error at or near "SERIAL"
+LINE 1: ...articulo(id_articulo SERIAL PRIMARY KEY, id autor SERIAL REF...
+                                                             ^
+actividad33=# CREATE TABLE articulo(id_articulo SERIAL PRIMARY KEY, id autor SERIAL REFERENCES auor)
+CREATE TABLE articulo(id_articulo SERIAL PRIMARY KEY, id_autor SERIAL REFERENCES autor(id_autor));
+ERROR:  syntax error at or near "SERIAL"
+LINE 1: ...articulo(id_articulo SERIAL PRIMARY KEY, id autor SERIAL REF...
+                                                             ^
+actividad33=# CREATE TABLE articulo(id_articulo SERIAL PRIMARY KEY, id_autor SERIAL REFERENCES autor(id_autor));
+CREATE TABLE
+actividad33=# CREATE TABLE revista(id_revista SERIAL PRIMARY KEY, nombre VARHCAR(30), id_articulo SERIAL REFERENCES articulo(id_articulo));
+ERROR:  type "varhcar" does not exist
+LINE 1: ...BLE revista(id_revista SERIAL PRIMARY KEY, nombre VARHCAR(30...
+                                                             ^
+actividad33=# CREATE TABLE revista(id_revista SERIAL PRIMARY KEY, nombre VARCHAR(30), id_articulo SERIAL REFERENCES articulo(id_articulo));
+CREATE TABLE
+actividad33=# 

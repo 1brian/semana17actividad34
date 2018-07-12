@@ -1,0 +1,11 @@
+actividad33=#      
+CREATE TABLE CURSO(id_curso SERIAL PRIMARY KEY, id_alumnos SERIAL, asignaturas VARCHAR(50), id_profesor SERIA );
+ERROR:  type "seria" does not exist
+LINE 1: ...lumnos SERIAL, asignaturas VARCHAR(50), id_profesor SERIA );
+                                                               ^
+actividad33=# 
+CREATE TABLE CURSO(id_curso SERIAL PRIMARY KEY, id_alumnos SERIAL, asignaturas VARCHAR(50), id_profesor SERIAL );
+CREATE TABLE
+actividad33=# CREATE TABLE profesor(id_profesor SERIAL PRIMARY KEY, nombre VARCHAR, asignaturas VARCHAR(30), id_curso SERIAL REFERENCES curso(id_curso));
+CREATE TABLE
+actividad33=# 
